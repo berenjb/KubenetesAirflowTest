@@ -43,7 +43,7 @@ def preview_data(**kwargs):
 
     df = df.sort_values(by='Total Sales', ascending=False)
 
-    print(df[['Category', 'Total Sales']]).head(20)
+    print(df[['Category', 'Total Sales']].head(20))
 
 
 default_args = {
