@@ -3,15 +3,15 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 default_args = {
-    "owner": "Barron",
-    "start_date": datetime(2024, 6, 6),
-    "catchup": False
+    'owner': 'Barron',
+    'start_date': datetime(2024, 1, 25),
+    'catchup': False
 }
 
 dag = DAG(
-    'hello world',
+    'hello_world',
     default_args=default_args,
-    schedule= timedelta(days=1)
+    schedule=timedelta(days=1)
 )
 
 t1 = BashOperator(
@@ -21,8 +21,8 @@ t1 = BashOperator(
 )
 
 t2 = BashOperator(
-    task_id='hello_dml',
-    bash_command='echo "Hello Hello!!"',
+    task_id='hello_world_again',
+    bash_command='echo "Hello Again!"',
     dag=dag
 )
 
